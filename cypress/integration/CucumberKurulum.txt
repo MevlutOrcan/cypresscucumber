@@ -1,0 +1,34 @@
+1) https://www.npmjs.com/package/cypress-cucumber-preprocessor
+
+2) npm install --save-dev cypress-cucumber-preprocessor
+
+3) Cypress configuration kismindan su kismi alip plugins icindeki index.js icine ekledik
+
+            const cucumber = require('cypress-cucumber-preprocessor').default
+
+            module.exports = (on, config) => {
+              on('file:preprocessor', cucumber())
+            }
+
+4) Fature file i isin icine almak icin Cypress.json icine 
+
+        {
+            "testFiles": "**/*.feature"
+        }
+        
+    ekledik 
+    bunu yapinca caistirmak icin artik cypress js dosyasi degil feature doasyasi arayacak
+
+5)  daha sonra package.json icine 
+
+        "cypress-cucumber-preprocessor": {
+        "nonGlobalStepDefinitions": true
+        }
+
+    yapistiriyoruz
+
+6) step definition dosyalarinin basina ekledik
+import { Given, And, Then, When} from "cypress-cucumber-preprocessor/steps";
+
+Not: Feature file dosya ismi ile 
+step definition klasorunun ismi ayni olmali
