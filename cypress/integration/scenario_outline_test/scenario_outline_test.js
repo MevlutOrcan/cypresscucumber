@@ -5,8 +5,7 @@ Given('url e git',()=>{
 })
 And('arama yapilacak {string}',(capitals)=>{
     cy.get('.gLFyf').type(capitals);
-    cy.get('.LLD4me').click();
-    cy.get('.FPdoLc > center > .gNO89b').click();
+    cy.get('.FPdoLc > center > .gNO89b').click({force:true});
 })
 Then('arama yapildigini kontrol et {string}',(capitals)=>{
     cy.get('.gLFyf').should('have.value',capitals)

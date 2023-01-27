@@ -1,3 +1,4 @@
+@paylinn @smoke
 Feature: Login Test
 Scenario: TC01_Login
 Given url git
